@@ -20,6 +20,8 @@ COPY --from=cache ${CODER_CACHE_DIRECTORY} ${CODER_CACHE_DIRECTORY}
 USER root
 RUN chown -R coder:coder ${CODER_CACHE_DIRECTORY}
 
-USER coder
+#USER coder # this is set in entrypoint with su-exec
+RUN apk add --no-cache su-exec
+
 COPY entrypoint.sh /
 ENTRYPOINT [ "/entrypoint.sh" ]
