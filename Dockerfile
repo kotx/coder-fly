@@ -1,4 +1,4 @@
-FROM ghcr.io/coder/coder:v0.8.5 AS cache
+FROM ghcr.io/coder/coder:v0.8.15 AS cache
 
 ENV CODER_CACHE_DIRECTORY=/var/cache/coder
 ENV CODER_DEV_MODE=true
@@ -11,7 +11,7 @@ USER coder
 COPY make-cache.sh /
 RUN /make-cache.sh
 
-FROM ghcr.io/coder/coder:v0.8.5
+FROM ghcr.io/coder/coder:v0.8.15
 EXPOSE 8080
 ENV CODER_ADDRESS=0.0.0.0:8080
 ENV CODER_CACHE_DIRECTORY=/var/cache/coder
