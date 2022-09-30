@@ -1,4 +1,4 @@
-FROM ghcr.io/coder/coder:v0.8.15
+FROM ghcr.io/coder/coder:v0.9.1
 EXPOSE 8080
 ENV CODER_ADDRESS=0.0.0.0:8080
 
