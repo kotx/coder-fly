@@ -6,5 +6,5 @@ ENV CODER_ADDRESS=0.0.0.0:8080
 USER root
 RUN apk add --no-cache su-exec
 
-COPY entrypoint.sh /
+COPY --chmod=0755 entrypoint.sh /
 ENTRYPOINT [ "/entrypoint.sh" ]
